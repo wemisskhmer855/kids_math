@@ -10,8 +10,6 @@ class MathBrain {
       threeChoices: <int>[1, 2, 3]);
   //add the 3 numbers to threeChoices: []
   void add() {
-    mathData.answerOne = 10;
-    mathData.threeChoices.shuffle();
 //    mathData.threeChoices = [5, 6, 7];
 //    mathData.threeChoices.addAll([5, 6, 7]);
   }
@@ -19,6 +17,14 @@ class MathBrain {
 //  addNumsthreeChoices.add(getChoiceTwo());
   getChoices(int index) {
     return mathData.threeChoices[index];
+  }
+
+  getAnswerOne() {
+    return mathData.answerOne;
+  }
+
+  getAnswerTwo() {
+    return mathData.answerTwo;
   }
 
   getFirstNum() {
@@ -31,6 +37,15 @@ class MathBrain {
 
   getTotalNum() {
     return mathData.firstNum + mathData.secondNum;
+  }
+
+  void nextQuestion() {
+    mathData.firstNum = Random().nextInt(10) + 1;
+    mathData.secondNum = Random().nextInt(10) + 1;
+    mathData.threeChoices = [getAnswerOne(), getAnswerTwo(), getTotalNum()];
+    mathData.threeChoices.shuffle();
+
+//    mathData.threeChoices.addAll([mathData.answerOne, mathData.answerOne, 10]);
   }
 }
 

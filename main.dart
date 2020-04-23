@@ -42,6 +42,7 @@ class KidMath extends StatelessWidget {
 
 class _KidMathPageState extends State<KidMathPage> {
   MathBrain mathBrain = MathBrain();
+
 //  int randomPickOne = mathBrain.randomPickOne;
   @override
   Widget build(BuildContext context) {
@@ -214,6 +215,8 @@ class _KidMathPageState extends State<KidMathPage> {
               onPressed: () {
                 setState(() {
                   mathBrain.add();
+                  mathBrain.nextQuestion();
+
 //                  mathBrain.nextQuestion();
                 });
               },
